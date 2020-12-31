@@ -308,8 +308,8 @@ pd_data.info()
 
 songs = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
 for song in songs:
-    title = song.select('td.info > a.title.ellipsis')[0].text
-    singer = song.select('td.info > a.artist.ellipsis')[0].text
+    title = song.select('td.info > a.title.ellipsis')[0].text.strip()
+    singer = song.select('td.info > a.artist.ellipsis')[0].text.strip()
     print(title, singer, sep = '|')
 
 
