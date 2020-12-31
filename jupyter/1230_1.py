@@ -313,8 +313,29 @@ for song in songs:
     print(title, singer, sep = '|')
 
 
-# In[ ]:
+# In[138]:
+
+song_data = []
+rank = 1
+songs = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
+for song in songs:
+    title = song.select('td.info > a.title.ellipsis')[0].text.strip()
+    singer = song.select('td.info > a.artist.ellipsis')[0].text.strip()
+    song_data.append(['genie', rank, title, singer])
+    rank= rank+1
+
+    
+    
+# In[139]:
+
+import pandas as pd
+columns = ['서비스', '순위', '타이틀', '가수']
+pd_data = pd.DataFrame(song_data, columns=columns)
+pd_data.info()
 
 
+# In[140]:
 
+
+pd_data.to_excel('D:/Kangjh/music/genie.xlsx', index=False)
 
