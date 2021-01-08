@@ -163,14 +163,6 @@ sgg_pop_df_final.head()
 sgg_pop_df_final.to_excel('D:/Kangjh/Seoul_data/sgg_pop.xlsx', index=False)
 
 
-# In[35]:
-
-
-biz_data_list = pd.read_excel('D:\Kangjh\Seoul_data/Saneop.xlsx', engine='openpyxl')
-
-sgg_biz_df = pd.DataFrame(data = biz_data_list)
-
-
 # In[ ]:
 
 
