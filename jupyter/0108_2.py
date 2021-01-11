@@ -14,14 +14,14 @@ import pandas as pd
 
 
 # 예제 6-43 시군구 목록 데이터 불러오기
-seoul_sgg = pd.read_excel('D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/files/seoul_sgg_list.xlsx')
+seoul_sgg = pd.read_excel('D:/Kangjh/starbucks/seoul_sgg_list.xlsx')
 seoul_sgg.head()
 
 
 # In[38]:
 
 
-seoul_starbucks = pd.read_excel('D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/files/seoul_starbucks.xlsx', header=0)
+seoul_starbucks = pd.read_excel('D:/Kangjh/starbucks/seoul_starbucks.xlsx', header=0)
 seoul_starbucks.head()
 
 
@@ -39,14 +39,14 @@ seoul_starbucks.head()
 # In[14]:
 
 
-seoul_starbucks.to_excel('D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/files/seoul_starbucks_list.xlsx', index=False)
+seoul_starbucks.to_excel('D:/Kangjh/starbucks/seoul_starbucks_list.xlsx', index=False)
 
 
 # In[40]:
 
 
 # 예제 6-44 서울시 스타벅스 매장 목록 데이터 불러오기
-seoul_starbucks = pd.read_excel('D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/files/seoul_starbucks_list.xlsx')
+seoul_starbucks = pd.read_excel('D:/Kangjh/starbucks/seoul_starbucks_list.xlsx')
 seoul_starbucks.head()
 
 
@@ -74,7 +74,7 @@ seoul_sgg.head()
 
 
 # 예제 6-47 서울시 시군구별 인구통계 데이터 불러오기
-seoul_sgg_pop = pd.read_excel('D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/files/sgg_pop.xlsx')
+seoul_sgg_pop = pd.read_excel('D:/Kangjh/starbucks/sgg_pop.xlsx')
 seoul_sgg_pop.head()
 
 
@@ -90,7 +90,7 @@ seoul_sgg.head()
 
 
 # 예제 6-49 서울시 시군구 목록 데이터에 서울시 시군구별 사업체 수 통계 데이터를 병합
-seoul_sgg_biz = pd.read_excel('D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/files/sgg_biz.xlsx')
+seoul_sgg_biz = pd.read_excel('D:/Kangjh/starbucks/sgg_biz.xlsx')
 seoul_sgg = pd.merge(
     seoul_sgg, 
     seoul_sgg_biz,
@@ -118,7 +118,7 @@ import json
 # In[47]:
 
 
-seoul_starbucks = pd.read_excel('D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/files/seoul_starbucks_list.xlsx')
+seoul_starbucks = pd.read_excel('D:/Kangjh/starbucks/seoul_starbucks_list.xlsx')
 seoul_starbucks.head()
 
 
@@ -130,7 +130,7 @@ starbucks_map = folium.Map(
     tiles = 'Stamen Terrain',
     zoom_start = 11
 )
-starbucks_map/
+starbucks_map
 
 
 # In[60]:
@@ -150,7 +150,7 @@ for idx in seoul_starbucks.index:
         radius = 3
     ).add_to(starbucks_map)
 
-starbucks_map/
+starbucks_map
 
 
 # In[32]:
@@ -195,7 +195,7 @@ for idx in seoul_starbucks.index:
         radius = size
     ).add_to(starbucks_map2)
 
-starbucks_map2/
+starbucks_map2
 
 
 # In[35]:
@@ -222,7 +222,7 @@ seoul_sgg_stat.head()
 # In[52]:
 
 
-sgg_geojson_file_path ='D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/maps/seoul_sgg.geojson'
+sgg_geojson_file_path ='D:/Kangjh/starbucks/seoul_sgg.geojson'
 seoul_sgg_geo = json.load(open(sgg_geojson_file_path, encoding='utf-8'))
 seoul_sgg_geo['features'][0]['properties']
 
@@ -254,7 +254,7 @@ folium.GeoJson(
     style_function = style_function
 ).add_to(starbucks_bubble)
 
-starbucks_bubble/
+starbucks_bubble
 
 
 # In[57]:
@@ -292,7 +292,7 @@ starbucks_bubble
 # In[ ]:
 
 
-sgg_geojson_file_path = 'D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/maps/seoul_sgg.geojson'
+sgg_geojson_file_path = 'D:/Kangjh/starbucks/seoul_sgg.geojson'
 seoul_sgg_geo_2 = json.load(open(sgg_geojson_file_path, encoding = 'utf-8'))
 starbucks_choropleth = folium.Map(
     location = [37.573050, 126.979189],
@@ -332,7 +332,7 @@ seoul_sgg_stat.head()
 # In[64]:
 
 
-sgg_geojson_file_path ='D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/maps/seoul_sgg.geojson'
+sgg_geojson_file_path ='D:/Kangjh/starbucks/seoul_sgg.geojson'
 seoul_sgg_geo = json.load(open(sgg_geojson_file_path, encoding='utf-8'))
 
 
@@ -364,7 +364,7 @@ starbucks_choropleth
 # In[68]:
 
 
-sgg_geojson_file_path ='D:/Kangjh/datasalon-master/02_개정판/6_Starbucks_Location/maps/seoul_sgg.geojson'
+sgg_geojson_file_path ='D:/Kangjh/starbucks/seoul_sgg.geojson'
 seoul_sgg_geo = json.load(open(sgg_geojson_file_path, encoding='utf-8'))
 
 viz_map_1 = folium.Map(
